@@ -1,0 +1,17 @@
+Device count: 1
+Device0: GeForce GTX 460 SE (1024 MB), CUDA capability: 2.1
+UVA: 1
+UVA - canMapHostMemory: 1
+DMA - asyncEngineCount: 1
+MAX BLOCKS NUMBER: 65535
+
+BLOCKS_NUMBER = 1, THREADS_NUMBER = 32
+
+DMA - copy by using DMA-controller and launch kernel-function for each packet
+UVA - copy by using Unified Virtual Addressing and launch kernel-function once
+--------------------------------------------------------------------
+
+Test sequential: memory copy H->D & D->H and launch of kernel-function:
+DMA Memcpy & Kernel: iters = 100000,     time: 11.341, ping = 0.00011341 sec
+UVA PING-PONG: iters = 1000000,          time: 3.075, ping = 3.075e-006 sec
+UVA faster than DMA in: 36.8813 X times
